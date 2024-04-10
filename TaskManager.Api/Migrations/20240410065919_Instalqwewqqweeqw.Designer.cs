@@ -12,7 +12,7 @@ using TaskManager.Api.Models.Data;
 namespace TaskManager.Api.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    [Migration("20240409121552_Instalqwewqqweeqw")]
+    [Migration("20240410065919_Instalqwewqqweeqw")]
     partial class Instalqwewqqweeqw
     {
         /// <inheritdoc />
@@ -222,10 +222,6 @@ namespace TaskManager.Api.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Phone")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Photo")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 

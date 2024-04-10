@@ -222,10 +222,6 @@ namespace TaskManager.Api.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Photo")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<DateTime>("RegistrationDate")
                         .HasColumnType("datetime2");
 

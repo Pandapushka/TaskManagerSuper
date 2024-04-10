@@ -18,17 +18,15 @@ namespace TaskManager.Common.Models
         public string Phone { get; set; }
         public DateTime RegistrationDate { get; set; }
         public DateTime LastLoginDate { get; set; }
-        public string Photo { get; set; }
         public UserStatus Status { get; set; }
         public UserModel(string fname, string lname, string email, string password,
-                    UserStatus userStatus, string phone, string photo)
+                    UserStatus userStatus, string phone)
         {
             FirstName = fname;
             LastName = lname;
             Email = email;
             Password = password;
             Phone = phone;
-            Photo = photo;
             RegistrationDate = DateTime.Now;
             Status = userStatus;
         }

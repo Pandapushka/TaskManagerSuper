@@ -13,7 +13,6 @@ namespace TaskManager.Api.Models
         public string Phone { get; set; }
         public DateTime RegistrationDate { get; set; }
         public DateTime LastLoginDate { get; set;}
-        public string Photo { get; set;}
         public List<Project> Projects { get; set; } = new List<Project>();
         public List<Desk> Desks { get; set; } = new List<Desk>();
         public List<TaskModel> Tasks { get; set; } = new List<TaskModel>();
@@ -23,16 +22,27 @@ namespace TaskManager.Api.Models
                 
         }
         public User(string fname, string lname, string email, string password,
-                    UserStatus userStatus = UserStatus.User, string phone = null, string photo = null)
+                    UserStatus userStatus = UserStatus.User, string phone = null)
         {
             FirstName = fname;
             LastName = lname;
             Email = email;
             Password = password;
             Phone = phone;
-            Photo = photo;
             RegistrationDate = DateTime.Now;
             Status = userStatus;
+        }
+
+        public User(UserModel user)
+        {
+            Id = user.Id;
+            FirstName = user.FirstName;
+            LastName = user.LastName;
+            Email = user.Email;
+            Password = user.Password;
+            Phone = user.Phone;
+            RegistrationDate = user.RegistrationDate;
+            Status = user.Status;
         }
 
         public UserModel ToDto() 
@@ -45,7 +55,6 @@ namespace TaskManager.Api.Models
                 Email = this.Email,
                 Password = this.Password,
                 Phone = this.Phone,
-                //Photo = this.Photo,
                 RegistrationDate = this.RegistrationDate,
                 Status = this.Status
 
