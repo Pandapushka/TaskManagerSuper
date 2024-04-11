@@ -6,7 +6,7 @@ using TaskManager.Common.Models;
 
 namespace TaskManager.Api.Models.Services
 {
-    public class UserService : ICommonService<UserModel>
+    public class UserService : AbstractionService, ICommonService<UserModel>
     {
         private readonly ApplicationContext _db;
 
@@ -35,6 +35,11 @@ namespace TaskManager.Api.Models.Services
         public User GetUser(string login, string password)
         {
             return _db.Users.FirstOrDefault(u => u.Email == login && u.Password == password);
+        }
+
+        public User GetUser(string login)
+        {
+            return _db.Users.FirstOrDefault(u => u.Email == login);
         }
 
         public ClaimsIdentity GetIdentity(string username, string password) 
@@ -119,5 +124,11 @@ namespace TaskManager.Api.Models.Services
               }
               return false;
         }
+        public UserModel Get(int id) 
+        {
+            User user = _db.Users.FirstOrDefault(x => x.Id == id);
+            return user?.ToDto();
+        }
+
     }
 }

@@ -12,8 +12,8 @@ using TaskManager.Api.Models.Data;
 namespace TaskManager.Api.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    [Migration("20240410065919_Instalqwewqqweeqw")]
-    partial class Instalqwewqqweeqw
+    [Migration("20240411064309_1")]
+    partial class _1
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -69,10 +69,6 @@ namespace TaskManager.Api.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<byte[]>("Photo")
-                        .IsRequired()
-                        .HasColumnType("varbinary(max)");
-
                     b.Property<int>("ProjectId")
                         .HasColumnType("int");
 
@@ -106,10 +102,6 @@ namespace TaskManager.Api.Migrations
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<byte[]>("Photo")
-                        .IsRequired()
-                        .HasColumnType("varbinary(max)");
 
                     b.Property<int>("Status")
                         .HasColumnType("int");
@@ -177,10 +169,6 @@ namespace TaskManager.Api.Migrations
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<byte[]>("Photo")
-                        .IsRequired()
-                        .HasColumnType("varbinary(max)");
 
                     b.Property<DateTime>("StartDate")
                         .HasColumnType("datetime2");
